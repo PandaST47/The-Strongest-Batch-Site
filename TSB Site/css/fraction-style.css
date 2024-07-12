@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+    font-size: 24px;
+    font-style: normal;
+}
+
+body {
+    background: url("../image/cave.png") no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: -1; /* Ensure the pseudo-element is behind the main content */
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.back {
+    font-size: 2vh;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    animation: fadeIn 1s ease-in-out;
+    margin: 5vh auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.fraction {
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.fraction h1 {
+    font-size: 6vh;
+    text-align: center;
+    margin-bottom: 1em;
+    animation: slideIn 1s ease-in-out;
+}
+
+.info-fraction {
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+.info-fraction p {
+    margin-bottom: 1em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.info-fraction ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-fraction h2 {
+    margin-bottom: 0.5em;
+    animation: slideIn 1s ease-in-out;
+    text-align: center;
+    font-size: 3vh;
+    color: #FFD700; /* Gold color for headings */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.info-fraction li {
+    background-color: rgba(68, 68, 68, 0.8);
+    margin-bottom: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.info-fraction li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .back {
+        font-size: 1.5vh;
+    }
+    .fraction h1 {
+        font-size: 4vh;
+    }
+    .info-fraction h2 {
+        font-size: 2.5vh;
+    }
+    .info-fraction li {
+        font-size: 2vh;
+        padding: 0.5em;
+    }
+}
+
+@media (min-width: 1920px) {
+    .back {
+        font-size: 2.5vh;
+    }
+    .fraction h1 {
+        font-size: 8vh;
+    }
+    .info-fraction h2 {
+        font-size: 4vh;
+    }
+    .info-fraction li {
+        font-size: 3vh;
+        padding: 1em;
+    }
+}
